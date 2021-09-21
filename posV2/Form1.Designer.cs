@@ -31,14 +31,15 @@ namespace posV2
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.product = new System.Windows.Forms.Button();
             this.dbConnection = new System.Windows.Forms.Label();
+            this.product = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -47,7 +48,8 @@ namespace posV2
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(107)))), ((int)(((byte)(131)))));
+            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(135)))));
+            this.panelLeft.Controls.Add(this.button1);
             this.panelLeft.Controls.Add(this.dbConnection);
             this.panelLeft.Controls.Add(this.product);
             this.panelLeft.Controls.Add(this.label2);
@@ -60,15 +62,27 @@ namespace posV2
             this.panelLeft.Size = new System.Drawing.Size(289, 663);
             this.panelLeft.TabIndex = 0;
             // 
-            // label1
+            // dbConnection
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(91, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Username";
+            this.dbConnection.AutoSize = true;
+            this.dbConnection.Location = new System.Drawing.Point(12, 9);
+            this.dbConnection.Name = "dbConnection";
+            this.dbConnection.Size = new System.Drawing.Size(0, 13);
+            this.dbConnection.TabIndex = 4;
+            // 
+            // product
+            // 
+            this.product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(107)))), ((int)(((byte)(131)))));
+            this.product.FlatAppearance.BorderSize = 0;
+            this.product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.product.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product.Location = new System.Drawing.Point(0, 335);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(289, 54);
+            this.product.TabIndex = 3;
+            this.product.Text = "Product";
+            this.product.UseVisualStyleBackColor = false;
+            this.product.Click += new System.EventHandler(this.product_Click);
             // 
             // label2
             // 
@@ -80,37 +94,34 @@ namespace posV2
             this.label2.TabIndex = 2;
             this.label2.Text = "adminastrator";
             // 
-            // product
+            // label1
             // 
-            this.product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(130)))), ((int)(((byte)(153)))));
-            this.product.FlatAppearance.BorderSize = 0;
-            this.product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.product.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product.Location = new System.Drawing.Point(0, 259);
-            this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(289, 54);
-            this.product.TabIndex = 3;
-            this.product.Text = "Product";
-            this.product.UseVisualStyleBackColor = false;
-            this.product.Click += new System.EventHandler(this.product_Click);
-            // 
-            // dbConnection
-            // 
-            this.dbConnection.AutoSize = true;
-            this.dbConnection.Location = new System.Drawing.Point(12, 9);
-            this.dbConnection.Name = "dbConnection";
-            this.dbConnection.Size = new System.Drawing.Size(0, 13);
-            this.dbConnection.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(91, 183);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 26);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Username";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(107)))), ((int)(((byte)(131)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(135)))));
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(289, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(813, 32);
             this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(289, 32);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(813, 631);
+            this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox2
             // 
@@ -133,14 +144,19 @@ namespace posV2
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel2
+            // button1
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(289, 32);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(813, 631);
-            this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(107)))), ((int)(((byte)(131)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 275);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(289, 54);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Dashboard";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Dashboard
             // 
@@ -175,6 +191,7 @@ namespace posV2
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
