@@ -13,6 +13,13 @@ namespace posV2
 {
     public partial class Dashboard : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBconnection db = new DBconnection();
@@ -33,6 +40,7 @@ namespace posV2
             }
             
         }
+      
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -65,6 +73,30 @@ namespace posV2
         private void button1_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

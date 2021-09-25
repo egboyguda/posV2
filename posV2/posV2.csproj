@@ -105,5 +105,8 @@
   <ItemGroup>
     <None Include="Resources\103335_add_server_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Casher\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
